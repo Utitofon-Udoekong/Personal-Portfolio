@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width:1024px){
+    #aboutMe, 
+    #projects,
+    #contact,
+    .projects,
+    .contact-me{
+        padding: 50px;
+    }
+    .description-image img{
+        height: 100%;
+    }
+    .description-text{
+        height: 100%;
+        padding: 40px;
+    }
+}
+@media screen and (max-width:992px){
+    
+}
+@media screen and (max-width:900px){
+    .social-media{
+        width: 40px;
+    }
+}
+@media (max-width: 650px) and (min-width: 100px){
+    .description,
+    .inputFields{
+        display: flex;
+        flex-direction: column;
+    }
+    .description{
+        flex-direction: column-reverse;
+    }
+    .description-text,
+    .description-image,
+    .customer-details,
+    .reachOut{
+        width: 100%;
+        margin: 0px;
+    }
+    .description-image{
+        height: 200px;
+    }
+}
+@media screen and (max-width:500px){
+    #aboutMe, 
+    #projects,
+    #contact,
+    .projects,
+    .contact-me{
+        padding: 50px 20px;
+    }
+    .description-text h2,
+    .projects h3,
+    .contact-title h1{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:380px){
+    .profile-card{
+        width: 100%;
+    }
+    #aboutMe, 
+    #projects,
+    #contact{
+        padding: 50px 0px;
+    }
+    .social-media{
+        width: 30px;
+    }
+    .icon-box{
+        height: 30px;
+    }
+    .icon-box a{
+        font-size: 15px;
+    }
+    .form-control .label{
+        font-size: 15px;
+    }
+}

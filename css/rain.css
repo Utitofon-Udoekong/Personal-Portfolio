@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+:root{
+    --main-background: rgba(255, 255, 255, 0.137);
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+header{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.scene,
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1;
+}
+.social-media{  
+    width: 50px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0%,-50%);
+    z-index: 10;
+}
+.icon-box{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--main-background);
+    margin-bottom: 5px;
+    transition: .5s;
+    backdrop-filter: blur(1.2px);
+    transform-origin: right;
+    cursor: pointer;
+}
+.icon-box a{
+    color: #fff;
+    font-size: 30px;
+}
+.profile-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(180deg, transparent 26%, var(--main-background) 80%);
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    backdrop-filter: blur(1.3px);
+}
+.profile-card .imgBx{
+    width: 100%;
+    height: 200px;
+}
+.imgBx img{
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+}
+.content{
+    padding: 20px;
+    text-align: center;
+}
+.content h1{
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    color: #fff;
+}
+.content h1 span{
+    text-transform: uppercase;
+}
+
+/* ---------about me--------- */
+#aboutMe, 
+#projects,
+#contact{
+    padding: 50px 120px 100px 120px;
+}
+.about-me,
+.projects,
+.contact-me{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--main-background);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(20, 19, 19, 0.479);
+}
+.description{
+    display: flex;
+    width: 100%;
+}
+.description-text{
+    width: 50%;
+    padding: 70px;
+    text-align: center;
+}
+.description-text h2,
+.projects h3,
+.contact-title h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.description-text h2 span{
+    position: absolute;
+    margin: 0 10px;
+}
+.description-text p{
+    font-size: clamp(14px, 2vw, 30px);
+    padding-bottom: 30px;
+}
+.description-text p{
+    line-height: 4vh;
+    font-size: clamp(14px, 2vw, 16px);
+}
+.skill-bar{
+    position: relative;
+    width: 50%;
+    padding: 70px 70px 70px 0;
+}
+.skills{
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    padding: 10px 18px;
+    background: linear-gradient(#61616144 0%, #333 10%, rgba(34, 34, 34, 0.404));
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .5s;
+}
+.skill-bar:hover .skills{
+    opacity: 0.05;
+}
+.skill-bar .skills:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.skills::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255,255,255,.1);
+    z-index: 10;
+}
+.name{
+    position: relative;
+    width: 110px;
+    text-align: right;
+    color: #fff;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+.value{
+    position: relative;
+    width: 40px;
+    text-align: left;
+    color: #fff;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+.percent{
+    position: relative;
+    width: calc(100% - 150px);
+    height: 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background: #151515;
+    overflow: hidden;
+}
+.percent .progress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: inset 0 0 2px #000;
+    animation: animate 4s ease-in-out forwards;
+}
+@keyframes animate{
+    from{
+        width: 0;
+    }
+}
+.skills:nth-child(1) .percent .progress{
+    background: linear-gradient(45deg, #1fe5ff77, #673ab777);
+}
+.skills:nth-child(2) .percent .progress{
+    background: linear-gradient(45deg, #3bc0ff77, #33ff0077);
+}
+.skills:nth-child(3) .percent .progress{
+    background: linear-gradient(45deg, #1fff6a77, #a23ab777);
+}
+.skills:nth-child(4) .percent .progress{
+    background: linear-gradient(45deg, #ffee5477, #ff00ca77);
+}
+.skills:nth-child(5) .percent .progress{
+    background: linear-gradient(45deg, #22ffde77, #2196f377);
+}
+.skills:nth-child(6) .percent .progress{
+    background: linear-gradient(45deg, #22ff6c77, #f3219c77);
+}
+.resumeBtn{
+    padding: 15px 10px;
+    border: none;
+    background: #062d8996;
+    cursor: pointer;
+    transition: .3s;
+}
+.resumeBtn:hover{
+    background: #062d894b;
+}
+.resumeBtn a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+/* end */
+
+/* -------------projects---------- */
+.projects,
+.contact-me{
+    padding: 70px;
+}
+.filter-projects{
+}
+.filter-projects ul{
+    display: flex;
+    margin-bottom: 10px;
+}
+.filter-projects ul li{
+    color: #000;
+    background: #eee;
+    padding: 8px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.filter-projects ul li.active{
+    background: #03a9f4;
+    color: #fff;
+}
+.product{
+    display: flex;
+    flex-wrap: wrap;
+}
+@keyframes scene{
+}
+.product .itemBox{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    transition: display .5s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.itemBox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.719);
+    z-index: 1;
+    transition: opacity .5s ease;
+    opacity: 0;
+}
+.itemBox:hover::before{
+    opacity: 1;
+}
+.itemBox:hover img{
+    transform: scale(1.5);
+}
+.itemBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    object-fit: cover;
+}
+
+/* end */
+
+/* ---------contact----------- */
+.inputFields{
+    display: flex;
+}
+.customer-details,
+.reachOut{
+    width: 50%;
+    display: block;
+    margin: 0 10px;
+}
+.form-control{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+}
+.form-control .label{
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 20px;
+    transition: .5s;
+    color: #000;
+}
+.form-control input{
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.322);
+    color: #fff;
+    font-size: 18.5px;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+}
+.form-control input:focus + .label,
+.form-control input:valid + .label,
+.form-control .write-message:focus + .label,
+.form-control .write-message:valid + .label{
+    transform: translateY(-30px);
+    font-size: 14px;
+    left: 10px;
+    color: #fff;
+}
+.reachOut .form-control{
+    width: 100%;
+    height: 135px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.write-message{
+    width: 100%;
+    height: 135px;
+    padding: 10px;
+    color: #fff;
+    font-size: 18.5px;
+    background: rgba(255, 255, 255, 0.322);
+    outline: none;
+    border: none;
+    resize: none;
+}
+.reachOut button{
+    padding: 15px 20px;
+    background: #062d8996;
+    transition: .5s;
+    border: none;
+    cursor: pointer;
+}
+.reachOut button a{
+    color: #fff;
+    transition: .5s;
+}
+.reachOut button a span{
+    display: none;
+}
+.reachOut button:hover a span{
+    display: unset;
+    transition: .5s;
+}
